@@ -1,8 +1,9 @@
 package gen
 
 import (
-	"db2gorm/db"
-	"db2gorm/util"
+	"github.com/qmhball/db2gorm/db"
+	"github.com/qmhball/db2gorm/util"
+	"github.com/qmhball/db2gorm/tpl"
 	"fmt"
 	"gorm.io/gorm"
 	"os"
@@ -93,7 +94,10 @@ func doGenerateOne(orm *gorm.DB, conf GenConf, tblName string)(err error){
 		return err
 	}
 
-	tpl, _ := template.ParseFiles("./tpl/struct.txt")
+	tpl, err := template.New("struct").Parse(tpl.StructTpl)
+	if err != nil{
+		return err
+	}
 
 	//只输出至标准输出的情况
 	if conf.Stdout {

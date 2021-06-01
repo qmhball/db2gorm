@@ -1,7 +1,7 @@
 package gen
 
 import (
-	"db2gorm/util"
+	"github.com/qmhball/db2gorm/util"
 	"gorm.io/gorm"
 	"strings"
 )

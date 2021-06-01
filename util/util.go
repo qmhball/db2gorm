@@ -1,6 +1,7 @@
 package util
 
 import (
+	"fmt"
 	"os"
 	"strings"
 )
@@ -38,4 +39,11 @@ func PathExists(path string) bool{
 	}
 
 	return true
+}
+
+//获取tpl所在目录
+func GetTplPath() string{
+	dir, _ := os.Getwd()
+
+	return fmt.Sprintf("%s../tpl", dir)
 }

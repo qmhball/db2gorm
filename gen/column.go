@@ -5,7 +5,7 @@ import (
 	"gorm.io/gorm"
 	"regexp"
 	"strings"
-	"db2gorm/util"
+	"github.com/qmhball/db2gorm/util"
 )
 
 // show full columns 获取的原始数据
